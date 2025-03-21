@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class ProductController extends AbstractController
 {
@@ -34,6 +35,9 @@ class ProductController extends AbstractController
         $minPrice = $request->query->get('min_price', 0);
         $maxPrice = $request->query->get('max_price', PHP_INT_MAX);
         $products = $this->productRepository->findByPriceRange($minPrice, $maxPrice);
+        if (empty($products)) {
+            $this->logger->warning('No products found for the given price range.');
+        }
 
         $this->logger->info('Number of products found: ' . count($products) . ' for price range: ' . $minPrice . ' - ' . $maxPrice);
 
@@ -60,6 +64,8 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
 
             return $this->redirectToRoute('app_products');
+        } else {
+            $this->logger->error('Product creation failed due to validation errors.');
         }
 
         return $this->render('product/create.html.twig', [
@@ -84,6 +90,8 @@ class ProductController extends AbstractController
             $this->entityManager->flush();
 
             return $this->redirectToRoute('app_products');
+        } else {
+            $this->logger->error('Product editing failed due to validation errors.');
         }
 
         return $this->render('product/edit.html.twig', [
@@ -93,6 +101,7 @@ class ProductController extends AbstractController
     }
 
     #[Route("/admin/product/delete/{id}", name: "app_product_delete", methods: ["POST"])]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(int $id): Response
     {
         // Logic to delete a product

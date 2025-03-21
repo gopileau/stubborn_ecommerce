@@ -22,10 +22,15 @@ final class CheckoutController extends AbstractController
         $stripePublicKey = $_ENV['STRIPE_PUBLIC_KEY']; // Utilisez la clé publique pour le frontend
 
         // Handle the checkout logic, such as processing payment and clearing the cart.
+        if (!$this->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('app_login'); // Redirect to login if user is not authenticated
+        }
+
         $session = $request->getSession();
         $cart = $session->get('cart', []);
         
         if (empty($cart)) {
+            $this->logger->warning('Checkout attempted with an empty cart.');
             return $this->redirectToRoute('app_products'); // Redirect to products if cart is empty
         }
 
