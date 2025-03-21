@@ -1,0 +1,44 @@
+app_checkout:
+    path: /checkout
+    controller: App\Controller\CheckoutController::checkout
+
+app_checkout_success:
+    path: /checkout/success
+    controller: App\Controller\CheckoutController::success
+
+checkout_cancel:
+    path: /checkout/cancel
+    controller: App\Controller\CheckoutController::checkoutCancel
+
+app_product_show:
+    path: /produit/{id}
+    controller: App\Controller\ProductController::show
+
+app_boutique:
+    path: /boutique
+    controller: App\Controller\ProductController::index
+
+app_products:
+    path: /products
+    controller: App\Controller\ProductController::index
+
+security_registration:
+    path: /inscription
+    controller: App\Controller\SecurityController::registration
+
+app_cart:
+    path: /cart
+    controller: App\Controller\CartController::viewCart
+
+app_reset_password:
+    path: /reset-password/{token}
+    controller: App\Controller\SecurityController::resetPassword
+    methods: [GET, POST]
+
+controllers:
+    resource: '../src/Controller/'
+    type: attribute
+
+stripe_checkout:
+    path: /stripe/checkout
+    controller: App\Controller\CheckoutController::checkout

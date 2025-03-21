@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil Connecté - Stubborn{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue dans votre espace connecté</h1>
+
+    <div class="products-container">
+        {% for product in featuredProducts %}
+            <div class="product">
+                <img src="{{ product.image is empty ? asset('images/default.jpg') : asset(product.image) }}" 
+                     alt="{{ product.name }}" 
+                     class="product-image">
+                     
+                <div class="product-info" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="flex-grow: 1; text-align: left;">
+                        <h3>{{ product.name }}</h3>
+                        <p>{{ product.price }}€</p>
+                    </div>
+                    <button onclick="window.location.href='{{ path('app_product_show', { 'id': product.id }) }}'" class="btn" style="margin-left: auto;">Voir</button>
+
+                </div>
+            </div>
+        {% else %}
+            <p>Aucun produit en avant.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
