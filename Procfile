@@ -1,2 +1,1 @@
-web: node index.js
-
+web: heroku-php-nginx -C public/

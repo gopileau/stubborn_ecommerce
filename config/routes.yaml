@@ -1,4 +1,5 @@
 app_checkout:
+    methods: [GET]
     path: /checkout
     controller: App\Controller\CheckoutController::checkout
 
@@ -19,6 +20,7 @@ app_boutique:
     controller: App\Controller\ProductController::index
 
 app_products:
+    methods: [GET]
     path: /products
     controller: App\Controller\ProductController::index
 
@@ -34,6 +36,11 @@ app_reset_password:
     path: /reset-password/{token}
     controller: App\Controller\SecurityController::resetPassword
     methods: [GET, POST]
+
+app_product_create:
+    methods: [GET, POST]
+    path: /admin/product/create
+    controller: App\Controller\ProductController::create
 
 controllers:
     resource: '../src/Controller/'
