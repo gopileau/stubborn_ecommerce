@@ -1,1 +1,1 @@
-web: /vendor/autoload_runtime.phpc/
+web: vendor/bin/heroku-php-apache2 public/
