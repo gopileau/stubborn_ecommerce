@@ -1,3 +1,6 @@
+app_home:
+    path: /
+    controller: App\Controller\HomeController::index
 app_checkout:
     methods: [GET]
     path: /checkout
@@ -49,3 +52,4 @@ controllers:
 stripe_checkout:
     path: /stripe/checkout
     controller: App\Controller\CheckoutController::checkout
+
