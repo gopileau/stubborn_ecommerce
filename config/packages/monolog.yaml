@@ -36,4 +36,3 @@ when@prod:
                 path: "%kernel.project_dir%/logs/deprecation.log"
                 formatter: monolog.formatter.json
                 level: debug
-                channels: ["!event"]
