@@ -4,7 +4,7 @@ when@dev:
             main:
                 type: stream
                 path: "%kernel.project_dir%/logs/%kernel.environment%.log"  # Changez le chemin ici
-                # level: debug
+                level: debug
                 channels: ["!event"]
             console:
                 type: console
@@ -23,7 +23,7 @@ when@test:
             nested:
                 type: stream
                 path: "%kernel.project_dir%/logs/%kernel.environment%.log"  # Changez le chemin ici
-                # level: debug
+                level: debug
 
 when@prod:
     monolog:
@@ -37,7 +37,7 @@ when@prod:
             nested:
                 type: stream
                 path: "%kernel.project_dir%/logs/%kernel.environment%.log"  # Changez le chemin ici
-                # level: debug
+                level: debug
                 formatter: monolog.formatter.json
             console:
                 type: console

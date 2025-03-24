@@ -3,6 +3,10 @@ monolog:
         main:
             type: stream
             path: "%kernel.logs_dir%/%kernel.environment%.log"
-            # level: debug
+            level: debug
         console:
             type: console
+        deprecation:
+            type: stream
+            path: "%kernel.logs_dir%/deprecation.log"
+            level: debug
