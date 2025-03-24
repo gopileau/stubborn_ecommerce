@@ -1,5 +1,6 @@
 when@test:
     monolog:
+        channels: ['deprecation']  # Ajout du canal de dépréciation
         handlers:
             main:
                 type: fingers_crossed
@@ -14,6 +15,7 @@ when@test:
 
 when@prod:
     monolog:
+        channels: ['deprecation']  # Ajout du canal de dépréciation
         handlers:
             main:
                 type: fingers_crossed
@@ -32,6 +34,6 @@ when@prod:
                 channels: ["!event", "!doctrine"]
             deprecation:
                 type: stream
-                channels: [deprecation]
+                channels: ['deprecation']  # Canal de dépréciation
                 path: "%kernel.project_dir%/logs/deprecation.log"
                 formatter: monolog.formatter.json
