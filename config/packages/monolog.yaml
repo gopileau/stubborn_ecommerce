@@ -22,4 +22,3 @@ when@prod:
                 level: info
                 formatter: monolog.formatter.json
                 channels: ["deprecation"]  # Utilisez des crochets pour définir le canal
-                
