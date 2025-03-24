@@ -19,6 +19,7 @@ when@prod:
             deprecation:
                 type: stream
                 path: "%kernel.project_dir%/logs/deprecation.log"
-                level: info  # Assurez-vous que le niveau est défini
+                level: info
                 formatter: monolog.formatter.json
-                channels: [deprecation]  # Assurez-vous que le canal est bien défini
+                channels: ["deprecation"]  # Utilisez des crochets pour définir le canal
+                
