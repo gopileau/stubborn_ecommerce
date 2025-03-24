@@ -32,7 +32,6 @@ when@prod:
                 channels: ["!event", "!doctrine"]
             deprecation:
                 type: stream
-                channels: ["deprecation"]
+                channels: [deprecation]
                 path: "%kernel.project_dir%/logs/deprecation.log"
                 formatter: monolog.formatter.json
-                level: debug
