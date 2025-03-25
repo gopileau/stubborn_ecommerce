@@ -19,9 +19,12 @@ final class Version20250205232143 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE user CHANGE name username VARCHAR(255) NOT NULL');
+        // Check if the 'user' table exists before altering it
+        if ($schema->hasTable('user')) {
+            $this->addSql('ALTER TABLE user CHANGE name username VARCHAR(255) NOT NULL');
+        }
     }
+
 
     public function down(Schema $schema): void
     {
