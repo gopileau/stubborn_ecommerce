@@ -20,7 +20,8 @@ final class Version20250131222210 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE product ADD image VARCHAR(255) DEFAULT NULL');
+        // $this->addSql('ALTER TABLE product ADD image VARCHAR(255) DEFAULT NULL'); // Commented out to prevent duplicate column error
+
         $this->addSql('CREATE UNIQUE INDEX UNIQ_8D93D649E7927C74 ON user (email)');
     }
 

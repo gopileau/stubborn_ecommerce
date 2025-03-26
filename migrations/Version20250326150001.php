@@ -1,17 +1,27 @@
 <?php
-// src/DataFixtures/ProductFixtures.php
 
-namespace App\DataFixtures;
+declare(strict_types=1);
 
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 use App\Entity\Product;
 use App\Entity\Category; // Ensure Category is imported
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class AppFixtures extends Fixture
+final class Version20250326150001 extends AbstractMigration
 {
-    public function load(ObjectManager $manager): void
+    public function getDescription(): string
     {
+        return 'Load initial product data into the database';
+    }
+
+    public function up(Schema $schema): void
+    {
+        // Load initial product data
+        $manager = $this->getEntityManager();
+
         // Create categories
         $category1 = new Category();
         $category1->setName('Category 1');
@@ -37,15 +47,21 @@ class AppFixtures extends Fixture
         foreach ($products as $data) {
             $product = new Product();
             $product->setName($data['name'])
-                    ->setSizes(['XS', 'S', 'M', 'L', 'XL']) // Set multiple sizes
-                    ->setPrice($data['price'])
-                    ->setStock(['XS' => 2, 'S' => 2, 'M' => 2, 'L' => 2, 'XL' => 2]) // Stock for each size
-                    ->setFeatured($data['featured'])
-                    ->setImage($data['image'])
-                    ->setCategory($data['category']); // Associate with category
+                ->setSizes(['XS', 'S', 'M', 'L', 'XL']) // Set multiple sizes
+                ->setStock(['XS' => 2, 'S' => 2, 'M' => 2, 'L' => 2, 'XL' => 2]) // Stock for each size
+                ->setPrice($data['price'])
+                ->setFeatured($data['featured'])
+                ->setImage($data['image'])
+                ->setCategory($data['category']); // Associate with category
             $manager->persist($product);
         }
 
         $manager->flush();
     }
+
+    public function down(Schema $schema): void
+    {
+        // Logic to remove products can be added here if necessary
+    }
 }
+

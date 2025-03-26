@@ -20,7 +20,8 @@ final class Version20250205232148 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // Drop the cart table if it exists
-        $this->addSql('DROP TABLE IF EXISTS cart');
+        // $this->addSql('DROP TABLE IF EXISTS cart'); // Commented out to prevent errors
+
 
         // Create cart table
         $this->addSql('CREATE TABLE cart (
@@ -31,7 +32,8 @@ final class Version20250205232148 extends AbstractMigration
         ) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
 
         // Drop the product table if it exists
-        $this->addSql('DROP TABLE IF EXISTS product');
+        // $this->addSql('DROP TABLE IF EXISTS product'); // Commented out to prevent errors
+
 
         // Create product table
         $this->addSql('CREATE TABLE product (
