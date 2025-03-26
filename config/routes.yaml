@@ -53,3 +53,7 @@ stripe_checkout:
     path: /stripe/checkout
     controller: App\Controller\CheckoutController::checkout
 
+app_product_show_by_id:
+    path: /products/{id}
+    controller: App\Controller\ProductController::show
+    methods: [GET]
