@@ -38,7 +38,11 @@ final class HomeController extends AbstractController
             }
         }
 
+        // Debugging information
+        $this->addFlash('debug', 'Current user roles: ' . json_encode($this->getUser()->getRoles()));
+
         return $this->render('home/index.html.twig', [
+
             'featuredProducts' => $uniqueFeaturedProducts,
             'isLoggedIn' => $this->isGranted('IS_AUTHENTICATED_FULLY'),
         ]);
