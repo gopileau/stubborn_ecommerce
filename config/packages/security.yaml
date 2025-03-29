@@ -19,7 +19,7 @@ security:
             form_login:
                 login_path: security_login
                 check_path: security_login_check
-                default_target_path: app_home_connected
+                default_target_path: /home_connected
             logout:
                 path: security_logout
                 target: /
@@ -30,6 +30,8 @@ security:
             pattern: ^/
 
     access_control:
-        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/checkout, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin, roles: ROLE_ADMIN }
+
+        # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/connexion, roles: IS_AUTHENTICATED_ANONYMOUSLY }
