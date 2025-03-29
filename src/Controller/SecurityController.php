@@ -113,38 +113,6 @@ class SecurityController extends AbstractController
 
         return $this->redirectToRoute('security_login');
     }
-
-    /**
-     * @Route("/forgot-password", name="app_forgot_password", methods={"GET", "POST"})
-     */
-    public function forgotPassword(Request $request, MailerInterface $mailer, UserRepository $userRepository, EntityManagerInterface $entityManager): Response
-    {
-        if ($request->isMethod('POST')) {
-            $email = $request->request->get('email');
-            $user = $userRepository->findOneBy(['email' => $email]);
-
-            if ($user) {
-                $resetToken = bin2hex(random_bytes(32));
-                $user->setResetToken($resetToken);
-                $entityManager->flush();
-
-                $emailMessage = (new Email())
-                    ->from('no-reply@monsite.com')
-                    ->to($user->getEmail())
-                    ->subject('Password Reset Request')
-                    ->html('<p>To reset your password, please click the link below:</p>
-                            <p><a href="' . $this->generateUrl('app_reset_password', ['token' => $resetToken], UrlGeneratorInterface::ABSOLUTE_URL) . '">Reset my password</a></p>');
-
-                $mailer->send($emailMessage);
-                $this->addFlash('success', 'A password reset email has been sent.');
-            } else {
-                $this->addFlash('danger', 'No user found with this email.');
-            }
-        }
-
-        return $this->render('security/forgot_password.html.twig');
-    }
-
     /**
      * @Route("/reset-password/{token}", name="app_reset_password", methods={"GET", "POST"})
      */
