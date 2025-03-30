@@ -1,0 +1,343 @@
+header {
+    background-color: #f2f2f2;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    margin-left: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Product Page Styles */
+
+.product-grid {
+    display: grid; /* Changed from flex to grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 200px; /* Adjust width as needed */
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #333;
+}
+
+.add-to-cart-wrapper {
+    text-align: center;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.view-link:hover {
+    background-color: grey;
+    color: white; /* Change la couleur du texte au survol */
+    border-color: #000; /* Change la couleur de la bordure au survol */
+}
+
+.company-info {
+    flex: 0 0 200px; /* Fixed width for the company info */
+    margin-left: 20px; /* Space between products and company info */
+}
+
+main {
+    padding: 20px 20px 40px 20px; /* Réduit la marge en haut */
+    text-align: left;
+}
+
+.featured-products {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: flex; /* Utilise Flexbox pour l'alignement horizontal */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    justify-content: space-between; /* Espace entre les éléments */
+    gap: 20px; /* Espace entre les produits */
+    box-sizing: border-box;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 30%; /* Ajuste cette valeur selon tes besoins */
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 200px; /* Ajuste cette valeur si nécessaire */
+    object-fit: contain; /* Affiche l'image en entier, sans découpe */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Information du produit */
+.product-info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Titre et prix du produit */
+.product-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-info p {
+    margin-top: auto; /* Pousse le prix vers le bas de l'élément */
+}
+
+.product-info a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-left: auto; /* Ensures the button is pushed to the right */
+    display: inline-block; /* Ensures the button is treated as an inline element */
+    text-align: center; /* Centers the text within the button */
+}
+
+.product-info a:hover {
+    color: #0056b3;
+}
+
+.product-info .view-link {
+    margin-left: auto; /* Pousse le lien "Voir" vers la droite */
+    text-decoration: none;
+    color: #000; /* Black text */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded border radius */
+    padding: 5px 10px; /* Padding for better appearance */
+}
+
+.product-info .view-link:hover {
+    color: #0056b3;
+}
+
+/* Product Page Styles */
+
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column; /* Aligne les produits en colonne */
+        align-items: center; /* Centre les produits dans le conteneur */
+    }
+
+    .product {
+        width: 100%;  /* Chaque produit prend toute la largeur */
+        margin-bottom: 15px;  /* Ajuste la marge entre les produits */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;  /* Un produit par ligne sur mobile */
+        margin-bottom: 10px;  /* Ajuste la marge entre les produits */
+    }
+}
+
+/* Forms */
+form {
+    background-color: #ffffff;
+    padding: 30px 10px;  /* Réduit encore l'espace des côtés à 10px */
+    max-width: 500px;
+    margin: 5rem auto;
+    border: 1px solid #000; /* Bordure noire, épaisseur de 1px */
+    border-radius: 0; /* Bordures carrées */
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); /* Ombre si souhaitée */
+}
+
+form div {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000; /* Bordure noire pour les champs */
+    border-radius: 0; /* Bordures carrées */
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.15);
+}
+
+/* Style général pour les boutons */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: left; /* Aligne le texte à gauche */
+    display: inline-block; /* Utilise inline-block pour que la largeur soit ajustée à son contenu */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes */
+    width: auto; /* Assure que la largeur s'ajuste au texte */
+    min-width: 0; /* S'assure que le bouton ne prend pas de largeur supplémentaire */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color:white;
+}
+
+/* Bouton secondaire pour la connexion */
+.btn-secondary {
+    background-color: #6c757d; /* Couleur grise pour le bouton de connexion */
+}
+
+.btn-secondary:hover {
+    background-color: white;
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-footer p {
+    margin-bottom: 10px;
+}
+
+.form-footer a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+}
+
+.alert {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* New styles for the login form frame */
+.form-frame {
+    border: 2px solid #007bff; /* Blue border */
+    padding: 20px; /* Space inside the frame */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}

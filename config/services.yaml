@@ -1,0 +1,36 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false  # Généralement, les contrôleurs ne doivent pas être publics
+
+    # Enregistrement des services
+
+
+    App\Service\StripeService:
+        arguments:
+            $params: '@parameter_bag'
+
+    # Enregistrement des contrôleurs
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    # Enregistrement des repositories avec le bon tag
+    App\Repository\UserRepository:
+        tags: ['doctrine.repository_service']
+
+    App\Repository\CategoryRepository:
+        tags: ['doctrine.repository_service']
+        
+    App\Repository\ProductRepository: 
+        tags: ['doctrine.repository_service']  # Ajoute cette ligne
+
+    # Enregistrement des autres services
+    App\DataFixtures\AppFixtures: ~
+    App\Security\LoginFormAuthenticator: ~
+
+parameters:
+  stripe_public_key: '%env(STRIPE_PUBLIC_KEY)%'
+  STRIPE_SECRET_KEY: '%env(STRIPE_SECRET_KEY)%'
+  APP_URL: '%env(APP_URL)%'  # Add APP_URL parameter

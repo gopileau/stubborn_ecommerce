@@ -1,0 +1,19 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+
+    # Configuration de la session
+    annotations: false  # Désactivez l'intégration des annotations
+    test: true
+    session:
+        enabled: true
+        handler_id: 'session.handler.native_file'
+        storage_factory_id: 'session.storage.factory.native'
+        save_path: '%kernel.project_dir%/var/sessions'
+        cookie_secure: false
+        cookie_samesite: 'lax'
+        cookie_lifetime: 3600
+        cookie_path: '/'
+        name: 'STUBBORN_SESSID'
+        gc_maxlifetime: 3600
+        gc_probability: 1
+        gc_divisor: 100

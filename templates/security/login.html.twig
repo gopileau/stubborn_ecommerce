@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+<div class="form-container">
+
+    {# Affichage des messages flash #}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+    
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form action="{{ path('security_login_check') }}" method="post">
+    <h2>Se connecter</h2>
+    <hr class="divider">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    
+    <div class="form-group">
+        <label for="username">Email:</label>
+        <input type="email" id="username" name="_username" value="{{ last_username }}" required aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec quelqu'un d'autre.</small>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="_password" required autocomplete="off">
+    </div>
+    
+    <button type="submit" class="btn">Se connecter</button>
+    <p><a href="{{ path('app_forgot_password') }}">Mot de passe oublié ?</a></p>
+
+    <hr class="divider">
+    <p class="already-registered">Pas encore inscrit ?</p>
+    <a href="{{ path('app_register') }}" class="btn">Créer une compte</a>
+</form>
+
+</div>
+{% endblock %}
