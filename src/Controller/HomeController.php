@@ -20,8 +20,6 @@ final class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
 public function index(): Response
 {
-    // Debugging information
-    $this->addFlash('debug', 'Index method called');
 
     // Récupérer les produits en avant sans doublons (par nom ou ID)
     $featuredProducts = $this->entityManager->getRepository(Product::class)->findBy(
