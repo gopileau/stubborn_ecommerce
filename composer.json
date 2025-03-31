@@ -11,7 +11,7 @@
         "ext-iconv": "*",
         "ext-intl": "*",
         "doctrine/annotations": "^2.0.2",
-        "doctrine/dbal": "^3.9.4",
+        "doctrine/dbal": "^4.2",
         "doctrine/doctrine-bundle": "^2.14.0",
         "doctrine/doctrine-fixtures-bundle": "^4.1",
         "doctrine/doctrine-migrations-bundle": "^3.4.1",
