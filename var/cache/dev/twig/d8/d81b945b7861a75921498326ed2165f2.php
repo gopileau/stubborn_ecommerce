@@ -1,0 +1,251 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* checkout/index.html.twig */
+class __TwigTemplate_b6e4445f0d8cd058360eb7ab3034c436 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "checkout/index.html.twig"));
+
+        // line 1
+        yield "<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <script src=\"https://js.stripe.com/v3/\"></scriptBased on the user's feedback and the need to fix the Stripe payment integration, I'll update the `templates/checkout/index.html.twig` file to ensure proper functionality. Here are the necessary changes:
+
+<diff>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finaliser ma commande</title>
+    <script src=\"https://js.stripe.com/v3/\"></script>
+    <style>
+        .StripeElement {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .StripeElement--focus {
+            border-color: #66afe9;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+        .StripeElement--invalid {
+            border-color: #fa755a;
+        }
+        .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+        }
+        #card-errors {
+            color: #fa755a;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Finaliser ma commande</h1>
+    <form id=\"payment-form\" action=\"";
+        // line 41
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_checkout");
+        yield "\" method=\"POST\">
+        <div class=\"form-group\">
+            <label for=\"card-element\">
+                Informations de carte de crédit
+            </label>
+            <div id=\"card-element\">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <div id=\"card-errors\" role=\"alert\"></div>
+        </div>
+        <input type=\"hidden\" name=\"stripeToken\" id=\"stripeToken\">
+        <button type=\"submit\" class=\"btn btn-primary\">
+            Payer maintenant
+        </button>
+    </form>
+
+    <script>
+    // 1. Initialise Stripe avec ta clé publique
+    const stripe = Stripe(\"pk_test_51R1P9SKlGoOGFFAAPkUuNWT5bwfWVsndoo5eet2zVPGE1XWJooYDnNW92hdQ40t6Zbss9aWHJbtFAEXXrqjzeHYi00X7VUoFFW\");
+
+    document.getElementById(\"checkout-button\").addEventListener(\"click\", async () => {
+        try {
+            // 2. Effectue un appel à ton serveur pour créer une session Stripe
+            const response = await fetch(\"/create-checkout-session\", {
+                method: \"POST\",
+                headers: { \"Content-Type\": \"application/json\" },
+            });
+
+            const session = await response.json();
+
+            // 3. Redirige vers la page de paiement Stripe
+            const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+            if (result.error) {
+                alert(result.error.message);
+            }
+        } catch (error) {
+            console.error(\"Erreur lors du paiement :\", error);
+        }
+    });
+</script>
+
+</body>
+</html>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "checkout/index.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  87 => 41,  45 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <script src=\"https://js.stripe.com/v3/\"></scriptBased on the user's feedback and the need to fix the Stripe payment integration, I'll update the `templates/checkout/index.html.twig` file to ensure proper functionality. Here are the necessary changes:
+
+<diff>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finaliser ma commande</title>
+    <script src=\"https://js.stripe.com/v3/\"></script>
+    <style>
+        .StripeElement {
+            box-sizing: border-box;
+            height: 40px;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .StripeElement--focus {
+            border-color: #66afe9;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+        .StripeElement--invalid {
+            border-color: #fa755a;
+        }
+        .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+        }
+        #card-errors {
+            color: #fa755a;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Finaliser ma commande</h1>
+    <form id=\"payment-form\" action=\"{{ path('app_checkout') }}\" method=\"POST\">
+        <div class=\"form-group\">
+            <label for=\"card-element\">
+                Informations de carte de crédit
+            </label>
+            <div id=\"card-element\">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <div id=\"card-errors\" role=\"alert\"></div>
+        </div>
+        <input type=\"hidden\" name=\"stripeToken\" id=\"stripeToken\">
+        <button type=\"submit\" class=\"btn btn-primary\">
+            Payer maintenant
+        </button>
+    </form>
+
+    <script>
+    // 1. Initialise Stripe avec ta clé publique
+    const stripe = Stripe(\"pk_test_51R1P9SKlGoOGFFAAPkUuNWT5bwfWVsndoo5eet2zVPGE1XWJooYDnNW92hdQ40t6Zbss9aWHJbtFAEXXrqjzeHYi00X7VUoFFW\");
+
+    document.getElementById(\"checkout-button\").addEventListener(\"click\", async () => {
+        try {
+            // 2. Effectue un appel à ton serveur pour créer une session Stripe
+            const response = await fetch(\"/create-checkout-session\", {
+                method: \"POST\",
+                headers: { \"Content-Type\": \"application/json\" },
+            });
+
+            const session = await response.json();
+
+            // 3. Redirige vers la page de paiement Stripe
+            const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+            if (result.error) {
+                alert(result.error.message);
+            }
+        } catch (error) {
+            console.error(\"Erreur lors du paiement :\", error);
+        }
+    });
+</script>
+
+</body>
+</html>
+", "checkout/index.html.twig", "C:\\Windows\\System32\\stubborn_ecommerce\\templates\\checkout\\index.html.twig");
+    }
+}
