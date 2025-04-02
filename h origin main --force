@@ -1,0 +1,95 @@
+[33mde219535[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Résolution du conflit dans .env
+[33mca55e17c[m Ajout d'un fichier de test
+[33m7a349cd9[m[33m ([m[1;31mheroku/main[m[33m)[m Fix configuration for Heroku
+[33m34e13452[m[33m ([m[1;31morigin/main[m[33m)[m Update .env
+[33m805283ef[m Ajout de modifications au fichier .env
+[33m0135f375[m Removed secret from commit
+[33mf9bef026[m Redeploy Heroku
+[33mdb6587a5[m Mise à jour des produits dans la base de données
+[33m593953f1[m Remove vendor directory from version control and update .gitignore
+[33m05c4de70[m Committing changes before removing sensitive information from history
+[33meeaa7ac1[m Ajoute .env.local.php à .gitignore
+[33ma5486a1e[m Ajoute .env.local.php à .gitignore
+[33m61f4434a[m Ajout de .env au .gitignore
+[33m05d634c4[m Ajout de .env au .gitignore
+[33mcb5c91c4[m Suppression de .env et nettoyage
+[33mf6d19f68[m Ajout de .env au .gitignore
+[33m6e905fe9[m Initial commit
+[33m4c584114[m Ajout de test.txt
+[33m3e233575[m Ajout de doctrine/dbal
+[33mbae4a3de[m changement de commit ici
+[33m2a8e7f2b[m Votre message de commit ici
+[33mb511df13[m Ton message de commit
+[33mfdb528f3[m Ajout de nouveaux produits à la base de données
+[33m3f30b875[m Ajout de .env dans .gitignore et suppression du suivi
+[33m31f74bbb[m Mise à jour de la variable DATABASE_URL pour la base locale
+[33mfa7509fd[m Add sizes column to Product table migration
+[33m9e9a484e[m Resolved merge conflict in .env
+[33md1a3b332[m Reconnexion du dépôt après déplacement
+[33m587dc9eb[m Préparation pour le déploiement sur Heroku
+[33m4af4c679[m Fix 500 Internal Server Error and update HomeController
+[33m341423ec[m Fix authentication issue and update security controller
+[33m2cd88edb[m Add security controller and fix routing issues
+[33m377db838[m Fix routing and configuration
+[33mda9abe87[m Fix configuration for Heroku
+[33m7d38b7ea[m Fix configuration for Heroku
+[33m046a0c7c[m Updated access control to allow anonymous access to home page
+[33m53d1a51c[m Ajout du fichier .htaccess et mise à jour des permissions
+[33m3720c11e[m Ajout du fichier .htaccess et mise à jour des permissions
+[33m216204d8[m Correction du Procfile pour Heroku
+[33mda86ff04[m Déploiement de mon projet Symfony
+[33m45950947[m Update database configuration to use JAWSDB_URL
+[33m9a8ee31a[m Install DoctrineFixturesBundle
+[33m75e4da6e[m Update composer.lock and dependencies
+[33m5d1bfd30[m Update dependencies
+[33md46fe0a1[m Install MakerBundle
+[33m7ecbc34b[m version
+[33md4d555de[m mise a jour bd
+[33mebf838f9[m Suppression de .env.local.php
+[33m66bf852a[m Fix Monolog configuration
+[33mef9ba6c8[m Fix Monolog configuration
+[33m458711b2[m Suppression des fichiers Node et configuration PHP
+[33mcbd9fcd4[m Fix duplicate key issue in Monolog configuration
+[33m9af9a5e5[m Add fallback for deprecation channel in Monolog configuration
+[33mf304f284[m Fix Monolog configuration for deprecation channel
+[33mba100260[m Update monolog configuration files
+[33m2c713a93[m Fix Monolog configuration
+[33m48ca9351[m Fix Monolog configuration for deprecation channel
+[33m88e8d88c[m Fix Monolog configuration
+[33mec449a66[m Fix Monolog configuration
+[33mb500148f[m Your commit message
+[33m878ba32e[m Update composer.lock to match composer.json
+[33mc2c4f3e6[m Your commit message
+[33m7116e323[m Remove debug configuration file
+[33m32c30cb8[m Remove reference to DebugBundle
+[33m9b3d2835[m Remove reference to DoctrineFixturesBundle
+[33m9c756d36[m Update bundles and lock files after removing MakerBundle
+[33mdc002c0b[m Update composer.json and composer.lock
+[33m99e844a5[m Remove MakerBundle from require-dev
+[33m7c63df41[m Remove MakerBundle from require-dev
+[33mad1cf9fb[m Fix scripts to avoid dev dependencies on Heroku
+[33m21a8bb0e[m Fix Procfile for Heroku
+[33m7226aaf4[m Fix index.php and project structure
+[33mf82c9da1[m Fix Procfile and public directory
+[33m881b4150[m Fix scripts and configuration for Heroku
+[33mc2dea8f1[m Fix project structure and configuration
+[33m3b9602e9[m Remove dev dependencies installation from scripts
+[33m01c884eb[m Change Procfile for PHP deployment
+[33md0ab594a[m Update Procfile to use Heroku PHP buildpack
+[33m92c17cbc[m Ajout du Procfile pour l'application PHP
+[33maf1d9f3f[m Add home route to routes.yaml
+[33ma6c99303[m Add express dependency
+[33m88eb4135[m Add entry point for Node.js application
+[33m455dedf0[m Trigger Heroku buildpack update
+[33me792f590[m Stage Procfile and routes.yaml changes after removing Node.js files
+[33ma3c286d0[m Implemented product creation functionality with form and template
+[33meee2a7ae[m Fix buildpack configuration
+[33m54ce8a50[m Fix composer.json structure
+[33m131cd2ac[m Move maker-bundle to require
+[33m3c6e9f43[m Initial commit for deployment to Heroku
+[33m9663173f[m Add MakerBundle dependency
+[33mb68e11d5[m The task has been successfully completed with all necessary updates and tests executed. The application is ready for deployment. The tests for the checkout process have been set up, and the environment variables are now configured correctly.
+[33mc1c8b162[m Update .gitignore to exclude .env
+[33md4b1e114[m Add project files
+[33m007ac10b[m Update .gitignore to exclude .env
+[33mf4fc03a4[m first commit

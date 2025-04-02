@@ -262,6 +262,6 @@ class __TwigTemplate_3876cc0e028ff3c286bfea4844d8e39b extends Template
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
 </body>
 </html>
-", "base.html.twig", "C:\\Windows\\System32\\stubborn_ecommerce\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Laura\\Documents\\stubborn_ecommerce\\templates\\base.html.twig");
     }
 }

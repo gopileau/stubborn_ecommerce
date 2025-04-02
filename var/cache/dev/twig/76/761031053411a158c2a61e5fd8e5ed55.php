@@ -77,6 +77,6 @@ class __TwigTemplate_fca69fad7c6284342ed552acd79dc654 extends Template
 <p>Stubborn est une marque dédiée à fournir des produits de haute qualité tout en respectant le style.</p>
 
 </div>
-", "company_info.html.twig", "C:\\Windows\\System32\\stubborn_ecommerce\\templates\\company_info.html.twig");
+", "company_info.html.twig", "C:\\Users\\Laura\\Documents\\stubborn_ecommerce\\templates\\company_info.html.twig");
     }
 }

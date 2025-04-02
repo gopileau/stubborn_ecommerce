@@ -245,6 +245,6 @@ class __TwigTemplate_dba4b28a48e5c7fb6de3909147bf9c46 extends Template
 
     {{ form_end(form) }}
 </div>
-{% endblock %}", "registration/register.html.twig", "C:\\Windows\\System32\\stubborn_ecommerce\\templates\\registration\\register.html.twig");
+{% endblock %}", "registration/register.html.twig", "C:\\Users\\Laura\\Documents\\stubborn_ecommerce\\templates\\registration\\register.html.twig");
     }
 }
