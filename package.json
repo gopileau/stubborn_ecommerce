@@ -1,9 +1,10 @@
 {
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.5.0"
   },
   "engines": {
     "node": ">=20"
   }
-
 }
