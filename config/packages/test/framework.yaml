@@ -1,6 +1,0 @@
-# config/packages/test/framework.yaml
-framework:
-    test: true
-    # Other test configurations can be added here as needed
-    session:
-        handler_id: null
